@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState} from "../context/AuthContext";
 
 function Home() {
+    const { isAuthenticated } = useAuthState();
+
   return (
     <>
       <h1>Homepagina</h1>
