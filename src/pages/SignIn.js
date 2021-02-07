@@ -3,7 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from "axios";
 import {AuthContext, useAuthState} from "../context/AuthContext";
 
-const endpointlink = `https://polar-lake-14365.herokuapp.com/api/auth/signin`;
+//const endpointlink = `https://polar-lake-14365.herokuapp.com/api/auth/signin`;
+const endpointlink = `http://localhost8080/api/auth/signin`;
 
 function SignIn() {
   //context-functie
@@ -37,6 +38,7 @@ function SignIn() {
     event.preventDefault();
 
     try {
+      //const response = await axios.post('https://polar-lake-14365.herokuapp.com/api/auth/signup', {
       const response = await axios.post(`http://localhost:8080/api/auth/signin`, {
         username: username,
         password: password,
@@ -77,6 +79,9 @@ function SignIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)} />
         </label>
+
+
+
         <button
             type="submit"
             className="form-button"

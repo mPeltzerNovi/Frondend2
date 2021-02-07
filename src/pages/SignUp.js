@@ -25,11 +25,16 @@ function SignUp() {
 
     try {
       //1. Gebruik de data uit het formulier om een gebruiker aan te maken (check documentatie)
+
+      //const response = await axios.post('https://polar-lake-14365.herokuapp/api/auth/signup', {
       const response = await axios.post(`http://localhost:8080/api/auth/signup`, {
+
         username: username,
         email: email,
         password: password,
         role: ["user"],
+        //"admin" toevoegversie om stap 8 de lijst opvragen te tesen
+        //role: ["admin", "mod", "user"],
       });
 
       //2. Kijk goed wat je terugkrijgt

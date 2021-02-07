@@ -27,7 +27,11 @@ function Profile() {
                 //haal de protected data op met de token meegestuurd
                 //Het ging fout met de url uit Nova's uitwerking: 'http://localhost:8080/api/test/user'
                 //Het moet zijn:
+
+                //const response = await axios.get('https://polar-lake-14365.herokuapp.com/api/test/user', {
+                //const response = await axios.get('http://localhost:8080/api/test/admin', {
                 const response = await axios.get('http://localhost:8080/api/test/user', {
+
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,
@@ -59,6 +63,7 @@ function Profile() {
         {protectedData && <p>{protectedData}</p>}
         {error && <p className="message-error">{error}</p>}
       <p>Terug naar de <Link to="/">Homepagina</Link></p>
+
     </>
   );
 };
