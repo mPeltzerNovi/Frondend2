@@ -22,7 +22,7 @@ function AuthContextProvider({ children }) {
         async function getUserInfo() {
             try {
                 //We kunnen de gebruikersdata ophalen omdat we onszelf authenticeren met de token
-                    const response = await axios.get('https://polar-lake-14365.herokuapp.com/api/user', {
+                    const response = await axios.get('http://localhost:8080/api/test/user', {
                         headers: {
                             "Content-Type": "application/json",
                             Authorization: `Bearer ${token}`,
